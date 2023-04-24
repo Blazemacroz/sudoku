@@ -1,3 +1,8 @@
+const getRow = (puzzle, row) => puzzle[row];
+const getColumn = (puzzle, col) => puzzle.map(row => row[col]);
+const getSection = (puzzle, x, y) => puzzle.slice(y*3, (y+1)*3).map(row => row.slice(x*3, (x+1)*3)).flat();
+const includes1to9 = (arr) => Array(9).fill().every((_, i) => arr.includes(i+1));
+
 function getRow(puzzle, row) { return puzzle[row]; };
 function getColumn(puzzle, col) {
   let column = [];
